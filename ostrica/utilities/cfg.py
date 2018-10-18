@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        	OSTrICa - Open Source Threat Intelligence Collector 
+# Name:        	OSTrICa - Open Source Threat Intelligence Collector
 # Purpose:		Collection and visualization of Threat Intelligence data
 #
 # Author:      	Roberto Sponchioni - <rsponchioni@yahoo.it> @Ptr32Void
@@ -42,3 +42,8 @@ class Config(object):
     intelligence_type['ip'] = 'ip_information'
 
     deep_viz_api = 'YOUR_KEY_HERE'
+    threat_crowd_limit = True
+    threat_crowd_limit_seconds = 10
+    threat_miner_limit = True
+    threat_miner_limit_seconds = 10
+    threat_miner_limit_report = 10

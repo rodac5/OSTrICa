@@ -2,6 +2,8 @@ OSTrICa - Open Source Threat Intelligence Collector (An Open Source plugin-orien
 ========
 ![OSTrICa Graph]( https://github.com/Ptr32Void/OSTrICa/blob/master/docs/OSTrICaLogo.png "OSTrICa Graph" )
 
+**Note**: This sofware is no longer developed.
+
 **OSTrICa** stands for Open Source Threat Intelligence Collector and is an Open Source **plugin-oriented framework** to **collect and visualize** Threat Intelligence Information. Furthermore, OSTrICa is also the Italian word for oyster: that's where the logo come from.
 
 SOC analysts, incident responders, attack investigators or cyber-security analysts need to correlate IoCs (Indicator of Compromise), network traffic patterns and any other collected data in order to get a real advantage against cyber-enemies. 
@@ -32,10 +34,12 @@ Dependencies depends on the installed Plugins. For example:
 * `BeautifulSoup`, used by almost all the plugins to scrape web pages
 * `dnspython-1.12.0`, mainly used by CymruWhois plugin
 * `ipwhois-0.11.1`, used by PyWhois plugin
-* `python-deepviz-master`, used by DeepViz plugin (it requires an API key)
+* `python-deepviz-master`, used by DeepViz plugin (it requires an API key) - At the moment DeepViz plugin is not available to the public.
 * `python-whois-0.5.2`, used by PyWhois plugin
 * `pythonwhois-2.4.3`, used by PyWhois plugin
+* `requests`, used by ThreatCrowd/ThreatMiner plugin (query limit is set)
 
+Note: OSTrICa works on Python version >= 2.7.9
 
 ## How to use OSTrICa
 In order to use OSTrICa you need to execute the file `main.py`; and to get a list of available commands you need to run the command `help`.
@@ -73,9 +77,9 @@ To collect the information about specific IoCs you can execute the following com
 >email=jgou.veia@gmail.com
 >asn=16276
 >run
-Output created in C:\Users\Roberto\Documents\GitHub\OSTrICa_development\report\a0b983ae-e30a-46dc-a1d0-b59e661595c0
+Output created in C:\Users\Roberto\Documents\GitHub\OSTrICa\report\a0b983ae-e30a-46dc-a1d0-b59e661595c0
 > graph
-Graph generated in C:\Users\Roberto\Documents\GitHub\OSTrICa_development\viz\f4da8f02-ec9c-4700-9345-bd715de7789f.html
+Graph generated in C:\Users\Roberto\Documents\GitHub\OSTrICa\viz\f4da8f02-ec9c-4700-9345-bd715de7789f.html
 ```
 
 In case a verbose output is needed, it is possible to enable the `DEBUG` option in the `cfg.py`. 
@@ -102,6 +106,8 @@ To generate the graph 2 commands are available:
 
 ## Currently available plugins
 The following list contains the currently available plugins:
+* `ThreatMiner` - Developer `Ptr32Void`
+* `ThreatCrowd` - Developer `Ptr32Void`
 * `BlackLists` - Developer `Ptr32Void`
 * `CymruWhois` - Developer `Ptr32Void`
 * `DomainBigData` - Developer `Ptr32Void`
@@ -113,6 +119,7 @@ The following list contains the currently available plugins:
 * `VirusTotal` - Developer `Ptr32Void`
 * `WebSiteInformer` - Developer `Ptr32Void`
 * `WhoisXmlApi` - Developer `Ptr32Void`
+
 
 ## How to develop new Plugins
 Plugins are stored in the directory named `Plugins`. 
